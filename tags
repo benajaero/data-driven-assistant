@@ -4,3 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+assistant	main.py	/^def assistant(audio):$/;"	f
+audioinput	main.py	/^def audioinput():$/;"	f
+core_code	main.py	/^def core_code():$/;"	f
+datetime	main.py	/^import datetime$/;"	i
+greeting	main.py	/^def greeting():$/;"	f
+pyaudio	main.py	/^import pyaudio$/;"	i
+pyttsx3	main.py	/^import pyttsx3 $/;"	i
+sr	main.py	/^import speech_recognition as sr$/;"	i
+theDay	main.py	/^def theDay():$/;"	f
+theTime	main.py	/^def theTime(self):$/;"	f
+webbrowser	main.py	/^import webbrowser$/;"	i
+wikipedia	main.py	/^import wikipedia$/;"	i
