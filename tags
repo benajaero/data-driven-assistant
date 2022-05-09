@@ -13,6 +13,6 @@ pyaudio	main.py	/^import pyaudio$/;"	i
 pyttsx3	main.py	/^import pyttsx3 $/;"	i
 sr	main.py	/^import speech_recognition as sr$/;"	i
 theDay	main.py	/^def theDay():$/;"	f
-theTime	main.py	/^def theTime(self):$/;"	f
+theTime	main.py	/^def theTime():$/;"	f
 webbrowser	main.py	/^import webbrowser$/;"	i
 wikipedia	main.py	/^import wikipedia$/;"	i

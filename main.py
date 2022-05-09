@@ -37,30 +37,30 @@ def audioinput():
     aud = sr.Recognizer()
     with sr.Microphone() as source:
         print('listening and processing')
-        aud.pause_threshold = 0.7
-        audio.aud.listen(source)
+        #aud.pause_threshold = 0.7
+        audio = aud.listen(source)
 
-    try:
-        print("understanding")
+        try:
+            print("understanding")
 
-        phrase = aud.recognize_google(audio, language='en-us')
-        print("you said: ", phrase)
-    except Exception as exp:
-        print(exp)
-        print("Can you please repeat that")
-        return "None"
+            phrase = aud.recognize_google(audio, language='en-us')
+            print("you said: ", phrase)
+            return phrase
+        except Exception as exp:
+            print(exp)
+            print("Can you please repeat that")
+            return "None"
 
-    return phrase
 
-def theTime(self):
-    time = str(datetime.datetime.now())
+def theTime():
+    time = datetime.datetime.now()
 
-    print(time)
+    print(str(time))
 
-    hour = time[11:13]
-    minute = time[14:16]
+    hour = str(time.hour)
+    minute = str(time.minute)
 
-    assistant(self, "The time right now is" + "Hours and" + minutes + "Minutes")
+    assistant("The time right now is" + hour + " " + minute)
 
 def theDay():
     day = datetime.datetime.today().weekday() + 1
@@ -86,27 +86,28 @@ def core_code():
     while (True):
         phrase = audioinput().lower()
 
-    if "open medium" in phrase:
-        assistant("Opening Medium.com")
-        webbrowser.open("www.medium.com")
-    elif "open google" in phrase:
-        assistant("Opening Google")
-        webbrowser.open("www.google.com")
-    elif "what day is it" in phrase:
-        theDay()
-    elif "what time is it" in phrase:
-        theTime()
-    elif "bye" in phrase:
-        assistant("Exiting. Have a Good Day")
-        exit()
-    elif "from wikipedia" in phrase:
-        assistant("Checking the wikipedia")
-        phrase = phrase.replace("wikipedia", "")
-        result = wikipedia.summary(phrase, sentences=4)
-        assistant("As per wikipedia")
-        assistant(result)
-    elif "what is your name" in phrase:
-        assistant("I am Carla")
+        if "open medium" in phrase:
+            assistant("Opening Medium.com")
+            webbrowser.open("https://www.medium.com")
+        elif "open google" in phrase:
+            assistant("Opening Google")
+            webbrowser.open("https://www.google.com")
+        elif "what day is it" in phrase:
+            theDay()
+        elif "what time is it" in phrase:
+            theTime()
+            continue
+        elif "bye" in phrase:
+            assistant("Exiting. Have a Good Day")
+            exit()
+        elif "from wikipedia" in phrase:
+            assistant("Checking the wikipedia")
+            phrase = phrase.replace("wikipedia", "")
+            result = wikipedia.summary(phrase, sentences=4)
+            assistant("As per wikipedia")
+            assistant(result)
+        elif "what is your name" in phrase:
+            assistant("I am Carla")
 
 core_code()
 
